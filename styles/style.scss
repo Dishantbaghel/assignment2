@@ -1,3 +1,14 @@
+$border-color:#E2E2E2;
+$width:100%;
+
+@mixin customFunc{
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +16,7 @@
 }
 
 .parent {
-    width: 100%;
+    width: $width;
 }
 
 .child {
@@ -15,7 +26,7 @@
 .container1{
     background-color: #EEEEEE;
     padding: 4%;
-    border: 1px solid #E2E2E2;
+    border: 1px solid $border-color;
 }
 /* Sample Heading */
 .heading1{
@@ -34,7 +45,7 @@
     margin-bottom: 20px;
 }
 .container2{
-    width: 100%;
+    width: $width;
     display: flex;
     justify-content: space-between;
 }
@@ -42,10 +53,10 @@
     padding: 5px;
     width: 20%;
     text-align: center;
-    border: 1px solid #E2E2E2;
+    border: 1px solid $border-color;
 }
 .image{
-    width: 100%;
+    width: $width;
 }
 .gallery-text{
     width: 80%;
@@ -56,36 +67,25 @@
     padding: 10px;
 }
 .blue-btn{
-    display: inline-block;
-    font-size: 12px;
-    cursor: pointer;
-    border-radius: 5px;
+    @include customFunc();
     color: white;
     background-color: #428BCA;
-    padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 .white-btn{
-    display: inline-block;
-    font-size: 12px;
+    @include customFunc();
     background-color: white;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
     margin-bottom: 20px;
-    border: 1px solid #E2E2E2;
+    border: 1px solid $border-color;
 }
 .footer{
     padding-top: 3%;
     padding-bottom: 3%;
 }
-.footer{
-    font-weight: 400;
-}
 @media (max-width : 1150px){
     .container2{
-        width: 100%;
+        width: $width;
         display: flex;
         flex-wrap: wrap;
     }
@@ -97,20 +97,19 @@
 
 @media (max-width : 700px){
     .container2{
-        width: 100%;
+        width: $width;
         display: grid;
         grid-template-columns: auto ;
-        /* grid-template-rows: auto ; */
         grid-gap: 15px;
     }
     .gallery{
-        width: 100%;
+        width: $width;
     }
 }
 
 .nav {
 height: 50px;
-width: 100%;
+width: $width;
 margin-bottom: 50px;
 background-color: #222222;
 position: relative;
@@ -155,7 +154,7 @@ display: none;
 
 @media (max-width: 600px) {
     .nav{
-        width: 100%;
+        width: $width;
     }
 .nav-title{
 padding: 10px;
@@ -190,7 +189,7 @@ border-top: 2px solid gray;
 position: absolute;
 text-align: center;
 display: block;
-width: 100%;
+width: $width;
 background-color: #333;
 height: 0px;
 transition: all 0.3s ease-in;
@@ -200,7 +199,7 @@ left: 0px;
 }
 .nav-links-btn {
 display: block;
-width: 100%;
+width: $width;
 
 }
 
@@ -209,7 +208,6 @@ height: 0px;
 }
 
 #nav-check:checked~.nav-links {
-/* height: calc(100vh - 230px); */
 height: 180px;
 overflow-y: auto;
 }
